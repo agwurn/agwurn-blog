@@ -1,4 +1,7 @@
 import "../styles/global.css"
+import "../styles/prism-vsc-dark-plus.css";
+import "prismjs/plugins/line-numbers/prism-line-numbers.css";
+// import "remark-callouts/styles.css";
 
 export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />;

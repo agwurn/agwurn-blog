@@ -1,32 +1,72 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300&family=Oxygen+Mono&display=swap'); */
+/* body {
+  font-family: 'Oxygen Mono', monospace;
+} */
 body {
-  padding: 0;
-  margin: 0;
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    Segoe UI,
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    Fira Sans,
-    Droid Sans,
-    Helvetica Neue,
-    sans-serif;
+  font-family: 'Georgia', serif;
+  /* @apply font-serif */
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* 普通引用的樣式 */
+.blockquote {
+  @apply border-l-2 border-slate-500 pl-2
 }
 
-* {
-  box-sizing: border-box;
+/* Callout 引用的樣式 */
+.callout {
+  /* background-color: #f7f7f7; */
+  @apply border
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+.callout-title {
+  /* background-color: #f7f7f7; */
+  @apply p-2 flex items-center
+}
+
+.callout-icon {
+  /* background-color: #f7f7f7; */
+  @apply pr-2
+}
+
+.callout-content {
+  /* background-color: #f7f7f7; */
+  @apply p-2
+}
+.remark-highlight {
+  @apply drop-shadow-[3px_5px_5px_rgba(0,0,0,0.25)] my-4 
+}
+.language-js {
+  @apply rounded-lg
+}
+
+
+@layer base {
+  article h1 {
+    @apply text-3xl font-bold mt-8
+  }
+  article h2 {
+    @apply text-2xl font-bold mt-4
+  }
+  article h3 {
+    @apply text-xl font-bold mt-2
+  }
+  article hr {
+    @apply my-4
+  }
+  article p {
+    @apply mb-8
+  }
+  article ul {
+    @apply list-disc pl-6 list-inside
+  }
+  article > ul {
+    @apply my-4 pl-0
+  }
+  article ol {
+    @apply list-decimal list-inside
+  }
 }

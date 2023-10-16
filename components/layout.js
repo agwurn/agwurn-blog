@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from './layout.module.css';
-import utilStyles from '../styles/utils.module.css';
+// import styles from './layout.module.css';
+// import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 
 const name = 'Agwurn Lu';
@@ -9,7 +9,7 @@ export const siteTitle = 'Agwurn Lu 秘密基地';
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <div className="flex flex-col justify-center items-center">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -25,7 +25,7 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      {/* <header className={styles.header}>
         {home ? (
           <>
             <Image
@@ -57,10 +57,10 @@ export default function Layout({ children, home }) {
             </h2>
           </>
         )}
-      </header>
+      </header> */}
       <main>{children}</main>
       {!home && (
-        <div className={styles.backToHome}>
+        <div className="m-10 text-indigo-500 hover:underline">
           <Link href="/">← Back to home</Link>
         </div>
       )}

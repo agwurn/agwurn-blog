@@ -1,11 +1,12 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import Layout, { siteTitle } from '../components/layout';
-import utilStyles from '../styles/utils.module.css';
-import { getSortedPostsData } from '../lib/posts';
+import Head from "next/head";
+import Link from "next/link";
+import Image from "next/image";
+import Layout, { siteTitle } from "../components/layout";
+import utilStyles from "../styles/utils.module.css";
+import { getSortedPostsData } from "../lib/posts";
 
-const myIntroduction = "web dev. / music prod."
-const myQuote = "practice makes perfect"
+const myIntroduction = "web dev. / music prod.";
+const myQuote = "practice makes perfect";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -22,23 +23,29 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>{myIntroduction}</p>
-        <p>
-          {myQuote}
-        </p>
+      <section className="flex flex-col items-center p-8">
+        <Image
+          priority
+          src="/images/profile.jpg"
+          className="w-28 h-28 object-cover rounded-full"
+          height={256}
+          width={256}
+          alt=""
+        />
+        <h1 className="font-bold text-2xl">Agwurn Lu</h1>
+        <h1 className="">{myIntroduction}q</h1>
+        <p>{myQuote}</p>
       </section>
 
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
+      <section className="flex flex-col items-center">
+        <h2 className={utilStyles.headingLg}>文章列表</h2>
+        <ul className="list-disc">
           {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>{title}</Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
+            <li className="" key={id}>
+              <span className="text-gray-500">{date} </span>
+              <Link href={`/posts/${id}`}
+                    className="text-indigo-800 hover:underline"
+              >{title}</Link>
             </li>
           ))}
         </ul>
