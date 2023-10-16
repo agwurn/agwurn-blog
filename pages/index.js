@@ -37,7 +37,7 @@ export default function Home({ allPostsData }) {
         <p>{myQuote}</p>
       </section>
 
-      <section className="flex flex-col items-center">
+      <section className="flex flex-col items-center py-auto">
         <h2 className={utilStyles.headingLg}>文章列表</h2>
         <ul className="list-disc">
           {allPostsData.map(({ id, date, title }) => (

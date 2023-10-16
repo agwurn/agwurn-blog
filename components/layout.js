@@ -64,6 +64,10 @@ export default function Layout({ children, home }) {
           <Link href="/">← Back to home</Link>
         </div>
       )}
+      
+      <footer className='w-screen bg-slate-800 text-gray-400 flex flex-col items-center p-2'>
+        <h1 className=''>@agwurn 2023</h1>
+      </footer>
     </div>
   );
 }

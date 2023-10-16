@@ -7,19 +7,21 @@
   font-family: 'Oxygen Mono', monospace;
 } */
 body {
+  background-color: black;
+  color: rgba(255, 255, 255, 0.96);
   font-family: 'Georgia', serif;
   /* @apply font-serif */
 }
 
-/* 普通引用的樣式 */
-.blockquote {
-  @apply border-l-2 border-slate-500 pl-2
+/* 普通引用的樣式 */.blockquote {
+
+  @apply border-l-2 border-slate-500 px-2 my-8
 }
 
 /* Callout 引用的樣式 */
 .callout {
   /* background-color: #f7f7f7; */
-  @apply border
+  @apply border border-gray-800
 }
 
 .callout-title {
@@ -33,14 +35,14 @@ body {
 }
 
 .callout-content {
-  /* background-color: #f7f7f7; */
+  background-color: #aeaeae39;
   @apply p-2
 }
 .remark-highlight {
-  @apply drop-shadow-[3px_5px_5px_rgba(0,0,0,0.25)] my-4 
+  @apply drop-shadow-[3px_3px_3px_rgba(255,255,255,0.25)] my-4 
 }
 .language-js {
-  @apply rounded-lg
+  /* @apply rounded-lg */
 }
 
 
@@ -55,10 +57,11 @@ body {
     @apply text-xl font-bold mt-2
   }
   article hr {
-    @apply my-4
+    /* color: aqua; */
+    @apply my-4 border-gray-400 opacity-50
   }
   article p {
-    @apply mb-8
+    @apply my-4
   }
   article ul {
     @apply list-disc pl-6 list-inside
