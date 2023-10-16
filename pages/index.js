@@ -4,9 +4,10 @@ import Image from "next/image";
 import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
+import { animated, useSpring } from '@react-spring/web'
 
 const myIntroduction = "web dev. / music prod.";
-const myQuote = "practice makes perfect";
+const myQuote = "在這個快速的時代，我只想...慢一點";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -18,6 +19,18 @@ export async function getStaticProps() {
 }
 
 export default function Home({ allPostsData }) {
+
+  const showUp = useSpring({
+    from: {
+      opacity: 0,
+      y: '6%',
+    },
+    to: {
+      opacity: 1,
+      y: '0%',
+    }
+  })
+  
   return (
     <Layout home>
       <Head>
@@ -38,19 +51,21 @@ export default function Home({ allPostsData }) {
         <p className="italic text-sm my-8">{myQuote}</p>
       </section>
 
-      <section className="flex flex-col items-center py-auto">
-        <h2 className={utilStyles.headingLg}>文章列表</h2>
-        <ul className="list-disc">
-          {allPostsData.map(({ id, date, title }) => (
-            <li className="" key={id}>
-              <span className="text-gray-500">{date} </span>
-              <Link href={`/posts/${id}`}
-                    className="text-indigo-400 hover:underline"
-              >{title}</Link>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <animated.div style={showUp}>
+        <section className="flex flex-col items-center py-auto">
+          <h2 className={utilStyles.headingLg}>文章列表</h2>
+          <ul className="list-disc">
+            {allPostsData.map(({ id, date, title }) => (
+              <li className="" key={id}>
+                <span className="text-gray-500">{date} </span>
+                <Link href={`/posts/${id}`}
+                      className="text-indigo-400 hover:underline"
+                >{title}</Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </animated.div>
     </Layout>
   );
 }

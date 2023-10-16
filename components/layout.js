@@ -59,6 +59,7 @@ export default function Layout({ children, home }) {
         )}
       </header> */}
       <main>{children}</main>
+      
       {!home && (
         <div className="m-10 text-indigo-500 hover:underline">
           <Link href="/">← Back to home</Link>

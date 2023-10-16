@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Layout from "../../components/layout";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import Image from "next/image";
+import { animated, useSpring } from "@react-spring/web";
 
 export async function getStaticPaths() {
   const paths = getAllPostIds();
@@ -40,16 +41,58 @@ export default function Post({ postData }) {
     setOpacity(newOpacity)
   }
 
+  const bgImgShowUp = useSpring({
+    from: {
+      opacity: 0,
+    },
+    to: {
+      opacity: 1,
+    }
+  })
+
+  const showUp = useSpring({
+    from: {
+      opacity: 0,
+      // y: '60%',
+    },
+    to: {
+      opacity: 1,
+      // y: '0%',
+    },
+    config: {
+      mass: 1,
+      friction: 20,
+      tension: 30,
+    }
+  })
+  
+
   return (
     <Layout>
-      <div className="w-screen h-screen fixed bg-indigo-200 -z-10" 
-           style={{opacity: opacity}}>
+      <animated.div style={showUp}>
+        <div className="w-screen h-screen fixed bg-indigo-200 -z-10" 
+            style={{opacity: opacity}}
+        >
+          {postData.thumbnail && 
+            <img src={postData.thumbnail} 
+                  alt=""
+                  className="h-screen w-screen"
+            />
+          }      
+        </div>
+      </animated.div>
 
-      </div>
       <div className="w-screen flex flex-col items-center">
         <div className="w-full h-screen flex flex-col items-center justify-center">
-          <h1 className="text-4xl font-bold">{postData.title}</h1>
-          <p className="text-gray-400 absolute bottom-4">{postData.date}</p>
+          <animated.h1 className="text-4xl font-bold drop-shadow-md" style={showUp}>{postData.title}</animated.h1>
+          <div className="absolute bottom-4">
+            <animated.p className="text-indigo-400" style={showUp}>
+              {postData.tags.map(tag => {
+                return <>{tag} </>
+              })}
+            </animated.p>
+            <animated.p className="text-gray-400 " style={showUp}>{postData.date}</animated.p>
+          </div>
         </div>
         <hr/>
         <article 
@@ -57,8 +100,8 @@ export default function Post({ postData }) {
           dangerouslySetInnerHTML={{ __html: postData.contentHtml }} 
         />
 
-        <author className="w-full mt-20 border-t flex flex-col items-center">
-          <h1 className="my-10">感謝您的閱讀</h1>
+        <author className="w-full mt-10 py-8 flex flex-col items-center bg-gray-600">
+          <h1 className="mb-8">感謝您的閱讀</h1>
           <div>
             <Image
               src={"/images/profile.jpg"}
