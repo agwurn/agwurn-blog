@@ -1,4 +1,7 @@
-// pages/404.js
+import Layout from "../components/layout";
+
 export default function Custom404() {
-  return <h1>404 - Page Not Found qq</h1>;
+  return <Layout>
+    <h1 className="mt-[30vh]">404 本頁不存在</h1>
+  </Layout>
 }

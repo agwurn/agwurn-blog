@@ -23,7 +23,8 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className="flex flex-col items-center p-8">
+
+      <section className="flex flex-col items-center p-8 mt-20">
         <Image
           priority
           src="/images/profile.jpg"
@@ -32,9 +33,9 @@ export default function Home({ allPostsData }) {
           width={256}
           alt=""
         />
-        <h1 className="font-bold text-2xl">Agwurn Lu</h1>
-        <h1 className="">{myIntroduction}q</h1>
-        <p>{myQuote}</p>
+        <h1 className="text-2xl mt-8">Agwurn Lu</h1>
+        <h1 className="">{myIntroduction}</h1>
+        <p className="italic text-sm my-8">{myQuote}</p>
       </section>
 
       <section className="flex flex-col items-center py-auto">
@@ -44,7 +45,7 @@ export default function Home({ allPostsData }) {
             <li className="" key={id}>
               <span className="text-gray-500">{date} </span>
               <Link href={`/posts/${id}`}
-                    className="text-indigo-800 hover:underline"
+                    className="text-indigo-400 hover:underline"
               >{title}</Link>
             </li>
           ))}

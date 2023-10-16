@@ -9,7 +9,7 @@ export const siteTitle = 'Agwurn Lu 秘密基地';
 
 export default function Layout({ children, home }) {
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center min-h-screen">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -65,7 +65,7 @@ export default function Layout({ children, home }) {
         </div>
       )}
       
-      <footer className='w-screen bg-slate-800 text-gray-400 flex flex-col items-center p-2'>
+      <footer className='w-screen bg-slate-800 text-gray-400 flex flex-col items-center p-2 mt-auto'>
         <h1 className=''>@agwurn 2023</h1>
       </footer>
     </div>

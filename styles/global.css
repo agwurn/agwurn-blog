@@ -7,7 +7,7 @@
   font-family: 'Oxygen Mono', monospace;
 } */
 body {
-  background-color: black;
+  background-color: rgb(25, 29, 44);
   color: rgba(255, 255, 255, 0.96);
   font-family: 'Georgia', serif;
   /* @apply font-serif */
