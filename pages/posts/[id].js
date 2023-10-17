@@ -24,7 +24,9 @@ export async function getStaticProps({ params }) {
 
 export default function Post({ postData }) {
 
-  const [ opacity, setOpacity ] = useState(1);
+  const [ opacityProp, setOpacityProp ] = useSpring(() => ({
+    opacity: 1,
+  }));
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll)
@@ -38,7 +40,7 @@ export default function Post({ postData }) {
     const maxScroll = 400
     const newOpacity = 1 - scrollY / maxScroll
 
-    setOpacity(newOpacity)
+    setOpacityProp({opacity: newOpacity})
   }
 
   const bgImgShowUp = useSpring({
@@ -70,16 +72,16 @@ export default function Post({ postData }) {
   return (
     <Layout>
       <animated.div style={showUp}>
-        <div className="w-screen h-screen fixed bg-indigo-200 -z-10" 
-            style={{opacity: opacity}}
+        <animated.div className="w-screen h-screen fixed bg-indigo-200 -z-10" 
+            style={opacityProp}
         >
           {postData.thumbnail && 
             <img src={postData.thumbnail} 
                   alt=""
-                  className="h-screen w-screen"
+                  className="w-screen h-screen object-cover"
             />
           }      
-        </div>
+        </animated.div>
       </animated.div>
 
       <div className="w-screen flex flex-col items-center">
