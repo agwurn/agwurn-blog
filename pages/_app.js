@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }) {
     <motion.div key={router.pathname}>
       <Component {...pageProps} />
       <motion.div
-        className="fixed top-0 left-0 w-full h-full bg-slate-500 origin-left z-50"
+        className="fixed top-0 left-0 w-full h-full bg-gray-600 origin-left z-50"
         initial={{ scaleX: 0}}
         animate={{ scaleX: 0}}
         exit={{scaleX: 1}}
@@ -19,7 +19,7 @@ export default function App({ Component, pageProps }) {
       ></motion.div>
 
       <motion.div
-        className="fixed top-0 left-0 w-full h-full bg-slate-500 origin-right z-50"
+        className="fixed top-0 left-0 w-full h-full bg-gray-600 origin-right z-50"
         initial={{ scaleX: 1}}
         animate={{ scaleX: 0}}
         exit={{scaleX: 0}}
