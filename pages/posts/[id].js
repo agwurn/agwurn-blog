@@ -98,7 +98,7 @@ export default function Post({ postData }) {
         </div>
         <hr/>
         <article 
-          className="md:max-w-[40em] w-4/5 my-8"
+          className="md:max-w-[40em] w-[90vw] my-8"
           dangerouslySetInnerHTML={{ __html: postData.contentHtml }} 
         />
 
