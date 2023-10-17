@@ -36,7 +36,7 @@ export default function Post({ postData }) {
   },[])
 
   const handleScroll = () => {
-    const scrollY = window.scrollY
+    const scrollY = window.scrollY;
     const maxScroll = 400
     const newOpacity = 1 - scrollY / maxScroll
 

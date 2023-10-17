@@ -60,6 +60,7 @@ export default function Home({ allPostsData }) {
                 <span className="text-gray-500">{date} </span>
                 <Link href={`/posts/${id}`}
                       className="text-indigo-400 hover:underline"
+                      scroll={false}
                 >{title}</Link>
               </li>
             ))}
