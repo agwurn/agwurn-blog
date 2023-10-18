@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Layout from "../../components/layout";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import Image from "next/image";
-import { animated, useSpring } from "@react-spring/web";
+import { animated, config, useSpring } from "@react-spring/web";
 
 export async function getStaticPaths() {
   const paths = getAllPostIds();
@@ -24,11 +24,23 @@ export async function getStaticProps({ params }) {
 
 export default function Post({ postData }) {
 
+  const imgRef = useRef(null)
+
+
+
   const [ opacityProp, setOpacityProp ] = useSpring(() => ({
-    opacity: 1,
+    opacity: 0,
   }));
 
+  const checkImageLoaded = () => {
+    if(postData.thumbnail && imgRef.current.complete) {
+      setOpacityProp({opacity: 1})
+    }
+  }
+
   useEffect(() => {
+    checkImageLoaded()
+    handleScroll()
     window.addEventListener("scroll", handleScroll)
     return () => {
       window.removeEventListener("scroll", handleScroll)
@@ -42,15 +54,6 @@ export default function Post({ postData }) {
 
     setOpacityProp({opacity: newOpacity})
   }
-
-  const bgImgShowUp = useSpring({
-    from: {
-      opacity: 0,
-    },
-    to: {
-      opacity: 1,
-    }
-  })
 
   const showUp = useSpring({
     from: {
@@ -71,14 +74,17 @@ export default function Post({ postData }) {
 
   return (
     <Layout>
-      <animated.div style={showUp}>
-        <animated.div className="w-screen h-screen fixed bg-indigo-200 -z-10" 
+      <animated.div style={opacityProp} className="-z-50">
+        <animated.div className="w-screen h-screen fixed bg-indigo-200" 
             style={opacityProp}
         >
           {postData.thumbnail && 
             <img src={postData.thumbnail} 
-                  alt=""
-                  className="w-screen h-screen object-cover"
+                 alt=""
+                 className="w-screen h-screen object-cover blur-sm"
+                 ref={imgRef}
+                 onLoad={() => setOpacityProp({opacity: 1})}
+                 draggable="false"
             />
           }      
         </animated.div>
@@ -97,12 +103,13 @@ export default function Post({ postData }) {
           </div>
         </div>
         <hr/>
+
         <article 
-          className="md:max-w-[40em] w-[90vw] my-8"
+          className="md:max-w-[40em] w-[90vw] my-8 z-40"
           dangerouslySetInnerHTML={{ __html: postData.contentHtml }} 
         />
 
-        <author className="w-full mt-10 py-8 flex flex-col items-center bg-gray-600">
+        <author className="w-full mt-10 py-8 flex flex-col items-center bg-gray-600 z-40">
           <h1 className="mb-8">感謝您的閱讀</h1>
           <div>
             <Image

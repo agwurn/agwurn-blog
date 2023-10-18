@@ -61,12 +61,12 @@ export default function Layout({ children, home }) {
       <main>{children}</main>
       
       {!home && (
-        <div className="m-10 text-indigo-500 hover:underline">
+        <div className="m-10 text-indigo-500 hover:underline z-40">
           <Link href="/" scroll={false}>← Back to home</Link>
         </div>
       )}
       
-      <footer className='w-screen bg-slate-800 text-gray-400 flex flex-col items-center p-2 mt-auto'>
+      <footer className='w-screen bg-slate-800 text-gray-400 flex flex-col items-center p-2 mt-auto z-40'>
         <h1 className=''>@agwurn 2023</h1>
       </footer>
     </div>

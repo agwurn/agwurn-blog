@@ -38,5 +38,3 @@ function double(x){
 }
 // hi
 ```
-
-<!-- TOC -->

@@ -48,20 +48,20 @@ body {
 
 @layer base {
   article h1 {
-    @apply text-3xl font-bold mt-8
+    @apply text-3xl text-indigo-300 font-bold mt-8
   }
   article h2 {
-    @apply text-2xl font-bold mt-4
+    @apply text-2xl text-indigo-300 font-bold mt-4
   }
   article h3 {
-    @apply text-xl font-bold mt-2
+    @apply text-xl font-bold text-indigo-300 mt-4
   }
   article hr {
     /* color: aqua; */
     @apply my-4 border-gray-400 opacity-50
   }
   article p {
-    @apply my-4
+    @apply mb-4
   }
   article ul {
     @apply list-disc pl-6 list-inside
