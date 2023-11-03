@@ -7,21 +7,21 @@
   font-family: 'Oxygen Mono', monospace;
 } */
 body {
-  background-color: rgb(23, 23, 24);
-  color: rgba(255, 255, 255, 0.96);
-  font-family: 'Georgia', serif;
-  /* @apply font-serif */
+  background-color: rgb(255, 255, 255);
+  color: rgba(42, 42, 42, 0.96);
+  /* font-family: 'Georgia', serif; */
+  @apply font-sans
 }
 
 /* 普通引用的樣式 */.blockquote {
 
-  @apply border-l-2 border-slate-500 px-2 my-8
+  @apply border-l-2 border-slate-500 px-2 my-8 italic
 }
 
 /* Callout 引用的樣式 */
 .callout {
-  /* background-color: #f7f7f7; */
-  @apply border border-gray-800
+  background-color: #f7f7f7;
+  @apply border border-gray-100 drop-shadow-[1px_1px_1px_rgba(0,0,0,0.55)]
 }
 
 .callout-title {
@@ -39,7 +39,7 @@ body {
   @apply p-2
 }
 .remark-highlight {
-  @apply drop-shadow-[3px_3px_3px_rgba(255,255,255,0.25)] my-4 
+  @apply drop-shadow-[2px_2px_2px_rgba(0,0,0,0.55)] my-4 
 }
 .language-js {
   /* @apply rounded-lg */
@@ -48,26 +48,26 @@ body {
 
 @layer base {
   article h1 {
-    @apply text-3xl text-indigo-300 font-bold mt-8
+    @apply text-3xl text-gray-400 font-bold mt-12
   }
   article h2 {
-    @apply text-2xl text-indigo-300 font-bold mt-4
+    @apply text-2xl text-gray-500 font-bold mt-8 
   }
   article h3 {
-    @apply text-xl font-bold text-indigo-300 mt-4
+    @apply text-base font-bold text-gray-400 mt-4
   }
   article hr {
     /* color: aqua; */
     @apply my-4 border-gray-400 opacity-50
   }
   article p {
-    @apply mb-4
+    @apply mb-8
   }
   article ul {
     @apply list-disc pl-6 list-inside
   }
   article > ul {
-    @apply my-4 pl-0
+    @apply  pl-0
   }
   article ol {
     @apply list-decimal list-inside

@@ -75,7 +75,7 @@ export default function Post({ postData }) {
   return (
     <Layout>
       <animated.div style={opacityProp} className="-z-50">
-        <animated.div className="w-screen h-screen fixed bg-indigo-200" 
+        <animated.div className="w-screen h-screen fixed bg-slate-900" 
             style={opacityProp}
         >
           {postData.thumbnail && 
@@ -92,9 +92,9 @@ export default function Post({ postData }) {
 
       <div className="w-screen flex flex-col items-center">
         <div className="w-full h-screen flex flex-col items-center justify-center">
-          <animated.h1 className="text-4xl font-bold drop-shadow-md" style={showUp}>{postData.title}</animated.h1>
+          <animated.h1 className="text-4xl font-bold drop-shadow-md text-slate-200" style={showUp}>{postData.title}</animated.h1>
           <div className="absolute bottom-4">
-            <animated.p className="text-indigo-400" style={showUp}>
+            <animated.p className="text-teal-600" style={showUp}>
               {postData.tags.map(tag => {
                 return <>{tag} </>
               })}
@@ -109,7 +109,7 @@ export default function Post({ postData }) {
           dangerouslySetInnerHTML={{ __html: postData.contentHtml }} 
         />
 
-        <author className="w-full mt-10 py-8 flex flex-col items-center bg-gray-600 z-40">
+        <author className="w-full mt-10 py-8 flex flex-col items-center bg-gray-200 z-40">
           <h1 className="mb-8">感謝您的閱讀</h1>
           <div>
             <Image

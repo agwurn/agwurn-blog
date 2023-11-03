@@ -46,7 +46,7 @@ export default function Home({ allPostsData }) {
           width={256}
           alt=""
         />
-        <h1 className="text-2xl mt-8">Agwurn Lu</h1>
+        <h1 className="text-3xl font-bold mt-8">Agwurn Lu</h1>
         <h1 className="">{myIntroduction}</h1>
         <p className="italic text-sm my-8">{myQuote}</p>
       </section>
@@ -57,9 +57,9 @@ export default function Home({ allPostsData }) {
           <ul className="list-disc">
             {allPostsData.map(({ id, date, title }) => (
               <li className="" key={id}>
-                <span className="text-gray-500">{date} </span>
+                <span className="text-gray-400 font-extralight">{date} </span>
                 <Link href={`/posts/${id}`}
-                      className="text-indigo-400 hover:underline"
+                      className="text-teal-700 hover:underline"
                       scroll={false}
                 >{title}</Link>
               </li>

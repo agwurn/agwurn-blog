@@ -5,7 +5,7 @@ tags: ['#designPattern', '#react']
 thumbnail: ''
 ---
 
-# 關注點分離？
+## 關注點分離？
 
 就是把程式碼依照特定關注點（功能、責任）去分開，降低程式碼的 `耦合`
 
@@ -27,7 +27,7 @@ React 跟 Express 各自開發前後端程式
 ### 單一責任原則
 每個 Component、Function、Class 只負責單一明確功能或責任，降低程式碼複雜性，更好理解。
 
-# 程式碼範例
+## 程式碼範例
 ```js
 // 不分離關注點的程式碼
 function fetchUserDataAndRenderPage() {
@@ -46,14 +46,14 @@ function renderPage(userData) {
 }
 ```
 
-# 優點
+## 優點
 1. 可讀性
 2. 方便除錯、修改
 3. 方便寫測試
 
-# 反思（碎碎念）
+## 反思（碎碎念）
 
 
 ---
-# Reference
+## Reference
 來自 chatgpt 與自己的反思

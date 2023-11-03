@@ -61,7 +61,7 @@ export default function Layout({ children, home }) {
       <main>{children}</main>
       
       {!home && (
-        <div className="m-10 text-indigo-500 hover:underline z-40">
+        <div className="m-10 text-teal-600 hover:underline z-40">
           <Link href="/" scroll={false}>← Back to home</Link>
         </div>
       )}
