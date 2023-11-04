@@ -3,6 +3,7 @@ import Layout from "../../components/layout";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import Image from "next/image";
 import { animated, config, useSpring } from "@react-spring/web";
+import Link from "next/link";
 
 export async function getStaticPaths() {
   const paths = getAllPostIds();
@@ -25,8 +26,6 @@ export async function getStaticProps({ params }) {
 export default function Post({ postData }) {
 
   const imgRef = useRef(null)
-
-
 
   const [ opacityProp, setOpacityProp ] = useSpring(() => ({
     opacity: 0,
@@ -105,24 +104,30 @@ export default function Post({ postData }) {
         <hr/>
 
         <article 
-          className="md:max-w-[40em] w-[90vw] my-8 z-40"
+          className="md:max-w-[40em] w-[92vw] my-8 z-40"
           dangerouslySetInnerHTML={{ __html: postData.contentHtml }} 
         />
 
         <author className="w-full mt-10 py-8 flex flex-col items-center bg-gray-200 z-40">
-          <h1 className="mb-8">感謝您的閱讀</h1>
+          <h1 className="">感謝您的閱讀</h1>
+          
           <div>
             <Image
               src={"/images/profile.jpg"}
               height={144}
               width={144}
               alt="author_img"
-              className="w-20 h-20 object-cover rounded-full"
+              className="my-4 w-20 h-20 object-cover rounded-full"
             />
             <p className="my-2">Agwurn Lu</p>
           </div>
+          
           <p className="italic text-sm font-extralight">practice makes perfect</p>
         </author>
+
+        <div className="my-8 text-teal-600 hover:underline z-40">
+          <Link href="/" scroll={false}>← Back to home</Link>
+        </div>
       </div>
     </Layout>
   );

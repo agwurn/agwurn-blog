@@ -28,21 +28,22 @@ React 跟 Express 各自開發前後端程式
 每個 Component、Function、Class 只負責單一明確功能或責任，降低程式碼複雜性，更好理解。
 
 ## 程式碼範例
+不分離關注點的程式碼
 ```js
-// 不分離關注點的程式碼
 function fetchUserDataAndRenderPage() {
-  const userData = fetchUserData(); // 資料存取和處理
-  renderPage(userData); // 用戶界面處理
+  const userData = fetchUserData(); // 1. 資料存取和處理
+  renderPage(userData); // 2. 用戶界面處理
 }
-
-// 分離關注點的程式碼
+```
+分離關注點的程式碼
+```js
 function fetchUserData() {
-  // 資料存取和處理
+  // 1. 資料存取和處理
   return userData;
 }
 
 function renderPage(userData) {
-  // 用戶界面處理
+  // 2. 用戶界面處理
 }
 ```
 

@@ -9,7 +9,9 @@ export default function App({ Component, pageProps }) {
 
   return <AnimatePresence mode="wait">
     <motion.div key={router.pathname}>
+      
       <Component {...pageProps} />
+
       <motion.div
         className="fixed top-0 left-0 w-full h-full bg-gray-600 origin-left z-50"
         initial={{ scaleX: 0}}
