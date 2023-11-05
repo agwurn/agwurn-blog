@@ -30,8 +30,8 @@ export default function HomePage({allPostsData}) {
         <section className="flex flex-col items-center p-8 m-10 border rounded-lg shadow-md">
           <Image
             priority
-            src="/images/profile.jpg"
-            className="w-28 h-28 object-cover rounded-full shadow-[2px_3px_8px_rgba(0,0,0,0.55)]"
+            src="/images/agwurn_photo.jpg"
+            className="w-28 h-28 object-cover rounded-full shadow-[2px_3px_8px_rgba(0,0,0,0.35)]"
             height={256}
             width={256}
             alt=""

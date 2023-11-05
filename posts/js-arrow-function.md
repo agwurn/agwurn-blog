@@ -1,5 +1,5 @@
 ---
-title: 'JS | Arrow Function'
+title: 'JS｜Arrow Function'
 date: '2023-11-02'
 tags: ['#js']
 ---
@@ -42,5 +42,5 @@ const increment = a => a + 1;
 ### 不能做建構函式
 
 - Arrow function 本身不可以作為建構函式
-- 不能用 new 的方式
+- 不能用 `new` 的方式
 - 不可以放在 Class 的 contructor 裡

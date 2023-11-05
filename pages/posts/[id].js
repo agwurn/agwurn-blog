@@ -28,7 +28,7 @@ export default function Post({ postData }) {
   const imgRef = useRef(null)
 
   const [ opacityProp, setOpacityProp ] = useSpring(() => ({
-    opacity: 0,
+    opacity: 1,
   }));
 
   const checkImageLoaded = () => {
@@ -38,7 +38,7 @@ export default function Post({ postData }) {
   }
 
   useEffect(() => {
-    checkImageLoaded()
+    // checkImageLoaded()
     handleScroll()
     window.addEventListener("scroll", handleScroll)
     return () => {
@@ -73,11 +73,9 @@ export default function Post({ postData }) {
 
   return (
     <Layout>
-      <animated.div style={opacityProp} className="-z-50">
-        <animated.div className="w-screen h-screen fixed bg-slate-900" 
-            style={opacityProp}
-        >
-          {postData.thumbnail && 
+      <animated.div className="-z-50" style={opacityProp}>
+        <div className="w-screen h-screen fixed bg-gray-600">
+          {/* {postData.thumbnail && 
             <img src={postData.thumbnail} 
                  alt=""
                  className="w-screen h-screen object-cover blur-sm"
@@ -85,13 +83,13 @@ export default function Post({ postData }) {
                  onLoad={() => setOpacityProp({opacity: 1})}
                  draggable="false"
             />
-          }      
-        </animated.div>
+          }       */}
+        </div>
       </animated.div>
 
       <div className="w-screen flex flex-col items-center">
         <div className="w-full h-screen flex flex-col items-center justify-center">
-          <animated.h1 className="text-4xl font-bold drop-shadow-md text-slate-200" style={showUp}>{postData.title}</animated.h1>
+          <animated.h1 className="text-4xl font-bold drop-shadow-md text-slate-200">{postData.title}</animated.h1>
           <div className="absolute bottom-4">
             <animated.p className="text-teal-600" style={showUp}>
               {postData.tags.map(tag => {
@@ -113,11 +111,11 @@ export default function Post({ postData }) {
           
           <div>
             <Image
-              src={"/images/profile.jpg"}
+              src={"/images/agwurn_photo.jpg"}
               height={144}
               width={144}
               alt="author_img"
-              className="my-4 w-20 h-20 object-cover rounded-full"
+              className="my-4 w-20 h-20 object-cover rounded-full shadow-lg"
             />
             <p className="my-2">Agwurn Lu</p>
           </div>
