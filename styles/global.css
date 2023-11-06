@@ -85,8 +85,8 @@ body {
   article ol {
     @apply list-decimal list-inside text-sm
   }
-  article code {
-    @apply bg-gray-200 text-red-500 px-0.5 rounded-sm
+  article code { 
+    @apply bg-gray-200 text-red-500 px-0.5 rounded-sm text-sm
   }
   article pre code {
     @apply bg-[#1e1e1e]

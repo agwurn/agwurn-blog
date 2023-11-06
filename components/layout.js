@@ -27,12 +27,12 @@ export default function Layout({ children }) {
         ></Script>
         <Script>
           {`
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-    gtag('config', 'G-J4TQWY240X');
-  `}
+            gtag('config', 'G-J4TQWY240X');
+          `}
         </Script>
       </Head>
 
