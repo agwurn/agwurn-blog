@@ -4,6 +4,7 @@ import { getAllPostIds, getPostData } from "../../lib/posts";
 import Image from "next/image";
 import { animated, config, useSpring } from "@react-spring/web";
 import Link from "next/link";
+import Head from 'next/head';
 
 export async function getStaticPaths() {
   const paths = getAllPostIds();
@@ -22,37 +23,35 @@ export async function getStaticProps({ params }) {
   };
 }
 
-
 export default function Post({ postData }) {
+  const imgRef = useRef(null);
 
-  const imgRef = useRef(null)
-
-  const [ opacityProp, setOpacityProp ] = useSpring(() => ({
+  const [opacityProp, setOpacityProp] = useSpring(() => ({
     opacity: 1,
   }));
 
   const checkImageLoaded = () => {
-    if(postData.thumbnail && imgRef.current.complete) {
-      setOpacityProp({opacity: 1})
+    if (postData.thumbnail && imgRef.current.complete) {
+      setOpacityProp({ opacity: 1 });
     }
-  }
+  };
 
   useEffect(() => {
     // checkImageLoaded()
-    handleScroll()
-    window.addEventListener("scroll", handleScroll)
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  },[])
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleScroll = () => {
     const scrollY = window.scrollY;
-    const maxScroll = 400
-    const newOpacity = 1 - scrollY / maxScroll
+    const maxScroll = 400;
+    const newOpacity = 1 - scrollY / maxScroll;
 
-    setOpacityProp({opacity: newOpacity})
-  }
+    setOpacityProp({ opacity: newOpacity });
+  };
 
   const showUp = useSpring({
     from: {
@@ -67,12 +66,22 @@ export default function Post({ postData }) {
       mass: 1,
       friction: 20,
       tension: 30,
-    }
-  })
-  
+    },
+  });
 
   return (
     <Layout>
+      <Head>
+        <title>{postData.title} - Agwurn Lu</title>
+        <meta
+          name="description"
+          content="理鈞的部落格，紀錄前後端開發、音樂、羽球筆記。"
+        />
+        <meta property="og:image" content="/images/thumbnail.png" />
+        <meta name="og:title" content={postData.title} />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+
       <animated.div className="-z-50" style={opacityProp}>
         <div className="w-screen h-screen fixed bg-gray-600">
           {/* {postData.thumbnail && 
@@ -89,26 +98,30 @@ export default function Post({ postData }) {
 
       <div className="w-screen flex flex-col items-center">
         <div className="w-full h-screen flex flex-col items-center justify-center">
-          <animated.h1 className="text-4xl font-bold drop-shadow-md text-slate-200">{postData.title}</animated.h1>
+          <animated.h1 className="text-4xl font-bold drop-shadow-md text-slate-200">
+            {postData.title}
+          </animated.h1>
           <div className="absolute bottom-4">
             <animated.p className="text-teal-600" style={showUp}>
-              {postData.tags.map(tag => {
-                return <>{tag} </>
+              {postData.tags.map((tag) => {
+                return <>{tag} </>;
               })}
             </animated.p>
-            <animated.p className="text-gray-400 " style={showUp}>{postData.date}</animated.p>
+            <animated.p className="text-gray-400 " style={showUp}>
+              {postData.date}
+            </animated.p>
           </div>
         </div>
-        <hr/>
+        <hr />
 
-        <article 
+        <article
           className="md:max-w-[40em] w-[92vw] my-8 z-40"
-          dangerouslySetInnerHTML={{ __html: postData.contentHtml }} 
+          dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
         />
 
         <author className="w-full mt-10 py-8 flex flex-col items-center bg-gray-200 z-40">
           <h1 className="">感謝您的閱讀</h1>
-          
+
           <div>
             <Image
               src={"/images/agwurn_photo.jpg"}
@@ -119,12 +132,16 @@ export default function Post({ postData }) {
             />
             <p className="my-2">Agwurn Lu</p>
           </div>
-          
-          <p className="italic text-sm font-extralight">practice makes perfect</p>
+
+          <p className="italic text-sm font-extralight">
+            practice makes perfect
+          </p>
         </author>
 
         <div className="my-8 text-teal-600 hover:underline z-40">
-          <Link href="/" scroll={false}>← Back to home</Link>
+          <Link href="/" scroll={false}>
+            ← Back to home
+          </Link>
         </div>
       </div>
     </Layout>
