@@ -52,7 +52,7 @@ body {
   @apply p-2
 }
 .remark-highlight {
-  @apply drop-shadow-[2px_2px_2px_rgba(0,0,0,0.55)] my-4 
+  @apply drop-shadow-[1.5px_1.5px_2px_rgba(0,0,0,0.55)] my-4 
 }
 .language-js {
   /* @apply rounded-lg */
@@ -67,7 +67,7 @@ body {
     @apply text-2xl text-gray-500 font-bold mt-12 
   }
   article h3 {
-    @apply text-base font-bold text-gray-400 mt-6
+    @apply text-xl font-bold text-gray-400 mt-6
   }
   article hr {
     /* color: aqua; */
@@ -83,7 +83,7 @@ body {
     @apply  pl-0
   }
   article ol {
-    @apply list-decimal list-inside text-sm
+    @apply list-decimal list-inside text-sm my-4
   }
   article code { 
     @apply bg-gray-200 text-red-500 px-0.5 rounded-sm text-sm
