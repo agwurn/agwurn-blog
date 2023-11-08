@@ -75,6 +75,6 @@ body {
     @apply bg-[#1e1e1e]
   }
   a {
-    @apply underline text-slate-400
+    @apply underline text-slate-400 hover:drop-shadow-sm hover:text-teal-700
   }
 }
