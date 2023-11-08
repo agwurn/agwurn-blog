@@ -1,9 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import Script from "next/script";
-// import styles from './layout.module.css';
-// import utilStyles from '../styles/utils.module.css';
-import Link from "next/link";
 
 const name = "Agwurn Lu";
 export const siteTitle = "Agwurn Lu 秘密基地";
@@ -36,7 +33,7 @@ export default function Layout({ children }) {
         </Script>
       </Head>
 
-      <main className="">{children}</main>
+      <main className="w-full">{children}</main>
 
       {/* <footer className='w-screen bg-slate-800 text-gray-400 flex flex-col items-center p-2 mt-auto z-40'>
         <h1 className=''>@agwurn 2023</h1>

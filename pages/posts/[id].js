@@ -24,20 +24,12 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Post({ postData }) {
-  const imgRef = useRef(null);
 
   const [opacityProp, setOpacityProp] = useSpring(() => ({
     opacity: 1,
   }));
 
-  const checkImageLoaded = () => {
-    if (postData.thumbnail && imgRef.current.complete) {
-      setOpacityProp({ opacity: 1 });
-    }
-  };
-
   useEffect(() => {
-    // checkImageLoaded()
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -83,20 +75,10 @@ export default function Post({ postData }) {
       </Head>
 
       <animated.div className="-z-50" style={opacityProp}>
-        <div className="w-screen h-screen fixed bg-gray-600">
-          {/* {postData.thumbnail && 
-            <img src={postData.thumbnail} 
-                 alt=""
-                 className="w-screen h-screen object-cover blur-sm"
-                 ref={imgRef}
-                 onLoad={() => setOpacityProp({opacity: 1})}
-                 draggable="false"
-            />
-          }       */}
-        </div>
+        <div className="w-full h-screen fixed bg-gray-600"></div>
       </animated.div>
 
-      <div className="w-screen flex flex-col items-center">
+      <div className="w-full flex flex-col items-center">
         <div className="w-full h-screen flex flex-col items-center justify-center">
           <animated.h1 className="text-4xl font-bold drop-shadow-md text-slate-200">
             {postData.title}
@@ -120,7 +102,8 @@ export default function Post({ postData }) {
         />
 
         <author className="w-full mt-10 py-8 flex flex-col items-center bg-gray-200 z-40">
-          <h1 className="">感謝您的閱讀</h1>
+          <h1 className="italic text-slate-400">感謝您的閱讀</h1>
+          <p className="md:max-w-[40em] w-[92vw] my-8 text-sm text-slate-600">這個部落格才剛成立，我仍然在調整畫面，覺得這個時代資訊都太複雜了、社群軟體的廣告又多，希望在這裡可以提供一個最舒適的閱讀體驗，讓您可以專注、最小化干擾、一同心流。</p>
 
           <div>
             <Image

@@ -2,23 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @font-face { 
-  font-family: "Taipei Sans"; 
-  src: url("../public/assets/TaipeiSansTCBetaLight.ttf"); 
-  font-weight: 300;
-} 
-@font-face { 
-  font-family: "Taipei Sans"; 
-  src: url("../public/assets/TaipeiSansTCBetaRegular.ttf"); 
-  font-weight: 400;
-} 
-@font-face { 
-  font-family: "Taipei Sans"; 
-  src: url("../public/assets/TaipeiSansTCBold.ttf"); 
-  font-weight: 700;
-}  */
-
-
 body {
   background-color: rgb(255, 255, 255);
   color: rgba(42, 42, 42, 0.96);
@@ -26,8 +9,8 @@ body {
   /* @apply font-sans */
 }
 
-/* 普通引用的樣式 */.blockquote {
-
+/* 普通引用的樣式 */
+.blockquote {
   @apply border-l-2 border-slate-500 px-2 my-8 italic
 }
 
