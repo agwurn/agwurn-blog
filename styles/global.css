@@ -74,4 +74,7 @@ body {
   article pre code {
     @apply bg-[#1e1e1e]
   }
+  a {
+    @apply underline text-slate-400
+  }
 }
