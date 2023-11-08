@@ -75,7 +75,7 @@ export default function Post({ postData }) {
       </Head>
 
       <animated.div className="-z-50" style={opacityProp}>
-        <div className="w-full h-screen fixed bg-gray-600"></div>
+        <div className="w-screen h-screen fixed bg-gray-600"></div>
       </animated.div>
 
       <div className="w-full flex flex-col items-center">

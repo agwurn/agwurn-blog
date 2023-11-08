@@ -59,13 +59,16 @@ body {
     @apply mb-4 text-sm
   }
   article ul {
-    @apply list-disc ml-4 list-outside text-sm
+    @apply list-disc ml-4 list-outside text-sm 
   }
   article > ul {
-    @apply  pl-0
+    @apply pl-0 
   }
   article ol {
     @apply list-decimal list-inside text-sm my-4
+  }
+  article li a {
+    @apply break-words
   }
   article code { 
     @apply bg-gray-200 text-red-500 px-0.5 rounded-sm text-sm
