@@ -1,5 +1,5 @@
 ---
-title: 'JS｜async / await'
+title: 'JS｜async, await'
 date: '2023-11-08'
 tags: ['#js']
 ---
@@ -144,11 +144,8 @@ main();
 ---
 
 ## Reference
-
-https://www.casper.tw/development/2020/10/16/async-await/
-
-https://medium.com/itsems-frontend/javascript-sync-async-22e75e1ca1dc
-
-https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Statements/async_function
-
-chatGPT 的交互問答
+- [https://www.casper.tw/development/2020/10/16/async-await/](https://www.casper.tw/development/2020/10/16/async-await/)
+- [https://medium.com/itsems-frontend/javascript-sync-async-22e75e1ca1dc](https://medium.com/itsems-frontend/javascript-sync-async-22e75e1ca1dc)
+- [https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Statements/async_function](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Statements/async_function
+)
+- chatGPT 的交互問答

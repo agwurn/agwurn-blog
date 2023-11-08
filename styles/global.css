@@ -16,13 +16,12 @@ body {
 
 /* Callout 引用的樣式 */
 .callout {
-  background-color: #f7f7f7;
-  @apply border border-gray-100 drop-shadow-[1px_1px_1px_rgba(0,0,0,0.55)]
+  background-color: rgb(252, 231, 178);
+  @apply shadow-[1.5px_1.5px_2px_rgba(0,0,0,0.55)]
 }
 
 .callout-title {
-  /* background-color: #f7f7f7; */
-  @apply p-2 flex items-center
+  @apply p-2 flex items-center bg-fuchsia-100
 }
 
 .callout-icon {
@@ -35,7 +34,7 @@ body {
   @apply p-2
 }
 .remark-highlight {
-  @apply drop-shadow-[1.5px_1.5px_2px_rgba(0,0,0,0.55)] my-4 
+  @apply shadow-[1.5px_1.5px_2px_rgba(0,0,0,0.55)] my-4 
 }
 .language-js {
   /* @apply rounded-lg */

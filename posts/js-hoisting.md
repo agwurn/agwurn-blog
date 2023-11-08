@@ -74,12 +74,12 @@ let x
 
 let 跟 const 沒有 Hoisting？其實是有的，只是 let 跟 const 被提升的時候沒有被`初始化（Initialized）`，會被放在`暫時死區（Temporal Dead Zone）`
 
-<aside>
-🐤 所以 var, let, const 都會被提升，但 let, const 不會被初始化，還不能直接用。另外三者提升都只是宣告，不像 function 是整個函式都被提上去可以直接用。
 
-也想補充一下 var 是可以重新用 var 宣告同名的變數的，另外兩個不行。
+> [!info] 
+> 所以 var, let, const 都會被提升，但 let, const 不會被初始化，還不能直接用。另外三者提升都只是宣告，不像 function 是整個函式都被提上去可以直接用。
+>
+> 也想補充一下 var 是可以重新用 var 宣告同名的變數的，另外兩個不行。
 
-</aside>
 
 ## 該怎麼避免錯誤？
 
@@ -96,9 +96,6 @@ let 跟 const 沒有 Hoisting？其實是有的，只是 let 跟 const 被提升
 ---
 
 ## Reference
-
-https://www.w3schools.com/js/js_hoisting.asp
-
-https://developer.mozilla.org/zh-TW/docs/Glossary/Hoisting
-
-chatGPT 的交互對談
+- [https://www.w3schools.com/js/js_hoisting.asp](https://www.w3schools.com/js/js_hoisting.asp)
+- [https://developer.mozilla.org/zh-TW/docs/Glossary/Hoisting](https://developer.mozilla.org/zh-TW/docs/Glossary/Hoisting)
+- chatGPT 的交互對談
