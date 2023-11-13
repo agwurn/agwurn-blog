@@ -4,8 +4,6 @@ date: '2023-11-13'
 tags: ['#nextjs']
 ---
 
-# NextJS｜getStaticProps 跟 getStaticPaths 的疑問
-
 - 前言
 - Static-Site Generation（SSG）
 - getStaticProps

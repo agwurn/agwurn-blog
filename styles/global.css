@@ -34,7 +34,7 @@ body {
   @apply p-2
 }
 .remark-highlight {
-  @apply shadow-[1.5px_1.5px_2px_rgba(0,0,0,0.55)] my-4 
+  @apply shadow-[1.5px_1.5px_2px_rgba(0,0,0,0.55)] my-2 
 }
 .language-js {
   /* @apply rounded-lg */
@@ -55,16 +55,19 @@ body {
     @apply my-4 border-gray-400 opacity-50
   }
   article p {
-    @apply mb-4 text-sm
+    @apply my-4 text-base
   }
   article ul {
-    @apply list-disc ml-4 list-outside text-sm 
+    @apply list-disc ml-4 my-2 list-outside text-sm 
   }
   article > ul {
     @apply pl-0 
   }
   article ol {
     @apply list-decimal list-inside text-sm my-4
+  }
+  article li {
+    @apply my-2
   }
   article li a {
     @apply break-words
