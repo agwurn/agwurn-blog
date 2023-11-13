@@ -2,7 +2,6 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import Layout, { siteTitle } from "../layout";
-import utilStyles from '../../styles/utils.module.css'
 import { animated, useSpring } from '@react-spring/web'
 
 const myIntroduction = "web dev. / music prod.";
@@ -42,14 +41,14 @@ export default function HomePage({allPostsData}) {
         </section>
 
         <animated.div style={showUp}>
-          <section className="flex flex-col items-center py-auto">
-            <h2 className={utilStyles.headingLg}>文章列表</h2>
-            <ul className="list-disc">
+          <section className="flex flex-col items-center py-auto px-16">
+            <h2 >文章列表</h2>
+            <ul className="list-disc my-2">
               {allPostsData.map(({ id, date, title }) => (
                 <li className="" key={id}>
-                  <span className="text-gray-400 font-light">{date} </span>
+                  <span className="text-gray-300 font-mono font-light">{date} </span>
                   <Link href={`/posts/${id}`}
-                        className="text-slate-400 hover:underline"
+                        className="text-slate-400 no-underline hover:underline"
                         scroll={false}
                   >{title}</Link>
                 </li>

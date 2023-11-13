@@ -52,7 +52,6 @@ body {
     @apply text-xl font-bold text-gray-400 mt-6
   }
   article hr {
-    /* color: aqua; */
     @apply my-4 border-gray-400 opacity-50
   }
   article p {

@@ -80,7 +80,7 @@ export default function Post({ postData }) {
 
       <div className="w-full flex flex-col items-center">
         <div className="w-full h-screen flex flex-col items-center justify-center">
-          <animated.h1 className="text-4xl font-bold drop-shadow-md text-slate-200">
+          <animated.h1 className="text-4xl font-bold drop-shadow-md text-slate-200 p-8">
             {postData.title}
           </animated.h1>
           <div className="absolute bottom-4">
@@ -103,7 +103,11 @@ export default function Post({ postData }) {
 
         <author className="w-full mt-10 py-8 flex flex-col items-center bg-gray-200 z-40">
           <h1 className="italic text-slate-400">感謝您的閱讀</h1>
-          <p className="md:max-w-[40em] w-[92vw] my-8 text-sm text-slate-600">這個部落格才剛成立，我仍然在調整畫面，覺得這個時代資訊都太複雜了、社群軟體的廣告又多，希望在這裡可以提供一個最舒適的閱讀體驗，讓您可以專注、最小化干擾、一同心流。</p>
+          <div className="md:max-w-[40em] w-[92vw] my-8 text-sm text-slate-600">
+            <p>這個部落格才剛成立，我仍然在調整畫面，覺得這個時代資訊都太複雜了、社群軟體的廣告又多，希望在這裡可以提供一個最舒適的閱讀體驗，讓您可以專注、最小化干擾、一同心流。</p>
+            <br></br>
+            <p>我也正在學習中，一定會有寫錯或疏漏的部分，如果有任何錯誤或是疑問，歡迎寄信給我：<a href="mailto:agwurn.dev@gmail.com">agwurn.dev@gmail.com</a></p>
+          </div>
 
           <div>
             <Image
