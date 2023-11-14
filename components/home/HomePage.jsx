@@ -49,6 +49,12 @@ export default function HomePage({ allPostsData }) {
               1000,
               "Simplicity is the ultimate sophistication.",
               1000,
+              "平常心",
+              1000,
+              "To focus on technique, not power.",
+              1000,
+              "真正高手靠的不是激情，而是恰到好處的投入。",
+              1000,
             ]}
             wrapper="span"
             speed={50}
