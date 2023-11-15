@@ -30,6 +30,7 @@ export default function Post({ postData }) {
   }));
 
   useEffect(() => {
+    window.scrollTo(0,0);
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => {

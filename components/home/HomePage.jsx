@@ -4,6 +4,7 @@ import Image from "next/image";
 import Layout, { siteTitle } from "../layout";
 import { animated, useSpring } from "@react-spring/web";
 import { TypeAnimation } from "react-type-animation";
+import { useEffect } from "react";
 
 const myIntroduction = "web dev. / music prod.";
 
@@ -18,6 +19,10 @@ export default function HomePage({ allPostsData }) {
       y: "0%",
     },
   });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  },[])
 
   return (
     <Layout>
