@@ -17,7 +17,7 @@ body {
 /* Callout 引用的樣式 */
 .callout {
   background-color: rgb(252, 231, 178);
-  @apply shadow-[1.5px_1.5px_2px_rgba(0,0,0,0.55)]
+  @apply shadow-[1.5px_1.5px_2px_rgba(0,0,0,0.55)] my-2
 }
 
 .callout-title {

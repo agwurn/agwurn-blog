@@ -31,7 +31,7 @@ export default function HomePage({ allPostsData }) {
       </Head>
       <div className="lg:flex lg:flex-row flex-col">
         <section className="bg-slate-400 flex-1 flex flex-col items-start p-8 lg:h-screen h-[80vh] w-full relative shadow-sm">
-          <h1 className="absolute left-8 top-8">Agwurn Lu</h1>
+          <h1 className="absolute left-8 top-8 text-white">Agwurn Lu</h1>
           <Image
             priority
             src="/images/agwurn_photo.jpg"
@@ -63,24 +63,9 @@ export default function HomePage({ allPostsData }) {
             ]}
             wrapper="span"
             speed={50}
-            className="text-3xl font-bold my-auto h-[4em] block"
+            className="text-3xl font-bold my-auto h-[4em] block text-white"
             repeat={Infinity}
           />
-
-          {/* <div className="mt-auto flex items-center justify-center">
-            <Image
-              priority
-              src="/images/agwurn_photo.jpg"
-              className="w-16 h-16 object-cover rounded-full shadow-[2px_3px_8px_rgba(0,0,0,0.35)]"
-              height={128}
-              width={128}
-              alt=""
-            />
-            <div className="ml-4">
-              <h1 className="text-3xl font-bold">Agwurn Lu</h1>
-              <h1 className="">{myIntroduction}</h1>
-            </div>
-          </div> */}
         </section>
 
         <animated.div style={showUp} className="flex-1 p-8">
@@ -89,7 +74,7 @@ export default function HomePage({ allPostsData }) {
             <ul className="mt-8">
               {allPostsData.map(({ id, date, title }) => (
                 <li className="" key={id}>
-                  <span className="text-gray-300 font-mono font-light">
+                  <span className="text-gray-500 font-mono font-light">
                     {date}{" "}
                   </span>
                   <Link
